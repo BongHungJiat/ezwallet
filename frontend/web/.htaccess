@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteBase /
+
+# Exclude existing files and directories from rewriting
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route all requests to the entry script
+RewriteRule ^(.*)$ index.php?r=$1 [L,QSA]
