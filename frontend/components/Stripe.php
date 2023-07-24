@@ -17,7 +17,7 @@ class Stripe extends Component
     public function init()
     {
         parent::init();
-        $this->secretKey = 'sk_test_51NUlWFHOSHSSNQywYmWVUv9uYXgKCSBXKAPE3tep8worlxcU4i3PxWYfs2GH1qGlywVW8yQdqoawiCPYemqc5pIn00v5sj7wZF';
+        $this->secretKey = Yii::$app->params['stripe_key'];
     }
 
     public function createPaymentIntent($amount,$currency){

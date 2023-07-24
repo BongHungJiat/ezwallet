@@ -31,6 +31,16 @@ class RbacController extends Controller
         echo "User role created!";
     }
 
+    public function actionCreateSubadminRole()
+    {
+        echo "Creating sub-admin role...\n";
+        $role = Yii::$app->authManager->createRole('subadmin');
+        $role->description = 'Subadmin';
+        Yii::$app->authManager->add($role);
+        echo "Sub-admin role created!";
+    }
+
+
     public function actionRoleSetup()
     {
         echo "Checking through all user accounts and assignning roles...\n";

@@ -45,7 +45,7 @@ class AccessController extends Controller
         return [
             'status' => 'success',
             'message' => 'Access Token Generated',
-            'access_token' => $$tokenManager->generateToken(Yii::$app->user->getId()),
+            'access_token' => $tokenManager->generateToken(Yii::$app->user->getId()),
         ];
     }
 }
